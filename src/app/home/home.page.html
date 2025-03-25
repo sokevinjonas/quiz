@@ -1,20 +1,65 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card class="ion-padding">
+    <ion-card-title>Allons-y</ion-card-title>
+    <ion-card-subtitle>temps pour le quiz</ion-card-subtitle>
+    <ion-card-content>
+      <form [formGroup]="form()!">
+        <ion-item lines="none" color="light">
+          <ion-input
+            type="number"
+            placeholder="no. de question"
+            formControlName="question_count"
+            errorText="no. de question est requis"
+          >
+            <ion-text slot="end"> sur 100 </ion-text>
+          </ion-input>
+        </ion-item>
+        <ion-item lines="none" color="light" class="ion-margin-top">
+          <ion-select
+            label="Categorie"
+            labelPlacement="fixed"
+            formControlName="category_id"
+            interface="popover"
+            placeholder="Choisir la categorie"
+          >
+            @for (category of categories(); track $index) {
+            <ion-select-option [value]="category.id"
+              >{{ category.name }}</ion-select-option
+            >
+            }
+          </ion-select>
+        </ion-item>
+        <ion-item lines="none" color="light" class="ion-margin-top">
+          <ion-label>Duree (minute)</ion-label>
+          <ion-datetime-button
+            datetime="datetime"
+            slot="end"
+          ></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime
+                id="datetime"
+                formControlName="duration"
+                presentation="time"
+                hourCycle="h23"
+                [showDefaultButtons]="true"
+                [formatOptions]="{ hour: 'numeric', minute: '2-digit' }"
+              ></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        @if (isLoading()) {
+        <ion-button>
+          <ion-spinner name="crescent"></ion-spinner>
+        </ion-button>
+        }@else {
+        <ion-button (click)="onClick()" class="play">
+          Jouer
+          <ion-icon name="arrow-forward-circle-outline" slot="end"></ion-icon>
+        </ion-button>
+        }
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
