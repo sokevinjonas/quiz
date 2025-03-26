@@ -1,0 +1,18 @@
+ion-header.quiz-header {
+  background: transparent;
+  ion-toolbar {
+    --background: transparent;
+    padding: 3vh 1vh;
+  }
+}
+
+ion-content.quiz-content {
+  --background: var(--ion-background-gradient);
+
+  ion-item.timer {
+    border-radius: 20px 20px 0 0;
+    div {
+      padding: 2.5vh 0;
+    }
+  }
+}

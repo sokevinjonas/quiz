@@ -1,0 +1,243 @@
+import { create } from 'ionicons/icons';
+import { QuestionInterface } from '../interfaces/question.interface';
+
+export const questionsMock: QuestionInterface[] = [
+  {
+    id: '1',
+    question:
+      'Quel langage est utilisé pour développer des applications Android ?',
+    options: ['Java', 'C#', 'Python', 'Ruby'],
+    answer: 'Java',
+    category_id: '1',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '2',
+    question: 'Quel est l’objectif principal de Git ?',
+    options: [
+      'Gestion de versions',
+      'Compilation de code',
+      'Exécution de tests',
+      'Analyse de performance',
+    ],
+    answer: 'Gestion de versions',
+    category_id: '2',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '3',
+    question: 'Quel est le but du framework Angular ?',
+    options: [
+      'Créer des applications web dynamiques',
+      'Créer des applications mobiles',
+      'Optimiser le SEO',
+      'Améliorer les performances réseaux',
+    ],
+    answer: 'Créer des applications web dynamiques',
+    category_id: '3',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '4',
+    question:
+      'Quel est l’avantage principal de l’utilisation d’un langage de programmation typé statiquement ?',
+    options: [
+      'Sécurité accrue',
+      'Exécution plus rapide',
+      'Facilité d’écriture',
+      'Moins de lignes de code',
+    ],
+    answer: 'Sécurité accrue',
+    category_id: '4',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '5',
+    question: 'En JavaScript, que fait la méthode "push()" ?',
+    options: [
+      'Ajoute un élément à la fin d’un tableau',
+      'Supprime un élément du tableau',
+      'Trie un tableau',
+      'Concatène deux tableaux',
+    ],
+    answer: 'Ajoute un élément à la fin d’un tableau',
+    category_id: '5',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '6',
+    question:
+      'Quel langage est principalement utilisé pour le développement d’applications iOS ?',
+    options: ['Swift', 'Java', 'PHP', 'C++'],
+    answer: 'Swift',
+    category_id: '1',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '7',
+    question: 'Dans SQL, que fait la commande "SELECT" ?',
+    options: [
+      'Récupère des données',
+      'Ajoute des données',
+      'Supprime des données',
+      'Met à jour des données',
+    ],
+    answer: 'Récupère des données',
+    category_id: '6',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '8',
+    question:
+      'Quelle est la différence entre une fonction "synchronous" et "asynchronous" en JavaScript ?',
+    options: [
+      'La fonction asynchrone ne bloque pas le thread principal',
+      'La fonction synchrone ne retourne pas de valeur',
+      'Les fonctions synchrones sont plus lentes',
+      'Il n’y a pas de différence',
+    ],
+    answer: 'La fonction asynchrone ne bloque pas le thread principal',
+    category_id: '7',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '9',
+    question: 'Quel est le rôle principal d’un "API" ?',
+    options: [
+      'Fournir des services web',
+      'Sécuriser les données',
+      'Optimiser les performances du serveur',
+      'Analyser les données',
+    ],
+    answer: 'Fournir des services web',
+    category_id: '8',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '10',
+    question: 'Que signifie l’acronyme "HTML" ?',
+    options: [
+      'HyperText Markup Language',
+      'HyperText Machine Language',
+      'Hyper Transfer Markup Language',
+      'Hyperlink Transfer Markup Language',
+    ],
+    answer: 'HyperText Markup Language',
+    category_id: '9',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '11',
+    question: 'Qu’est-ce qu’un framework ?',
+    options: [
+      'Un ensemble de bibliothèques et d’outils pour faciliter le développement',
+      'Un type de serveur',
+      'Un environnement d’exécution',
+      'Un langage de programmation',
+    ],
+    answer:
+      'Un ensemble de bibliothèques et d’outils pour faciliter le développement',
+    category_id: '3',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '12',
+    question:
+      'Dans le langage Python, quelle fonction est utilisée pour afficher un message à l’écran ?',
+    options: ['print()', 'show()', 'echo()', 'display()'],
+    answer: 'print()',
+    category_id: '10',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '13',
+    question: 'Qu’est-ce que le "CSS" ?',
+    options: [
+      'Cascading Style Sheets',
+      'Cascading Style Syntax',
+      'Client Side Script',
+      'Computational Style Syntax',
+    ],
+    answer: 'Cascading Style Sheets',
+    category_id: '9',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '14',
+    question: 'Quelle commande Git permet de cloner un repository distant ?',
+    options: ['git clone', 'git pull', 'git fetch', 'git commit'],
+    answer: 'git clone',
+    category_id: '2',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '15',
+    question: 'Que signifie l’acronyme "API" ?',
+    options: [
+      'Application Programming Interface',
+      'Automated Process Integration',
+      'Advanced Programming Internet',
+      'None of the above',
+    ],
+    answer: 'Application Programming Interface',
+    category_id: '8',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '16',
+    question: 'Quel est le but de la méthode "reduce()" en JavaScript ?',
+    options: [
+      'Réduire un tableau à une seule valeur',
+      'Créer un tableau à partir d’un autre tableau',
+      'Filtrer les éléments d’un tableau',
+      'Trier un tableau',
+    ],
+    answer: 'Réduire un tableau à une seule valeur',
+    category_id: '5',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '17',
+    question:
+      'Dans une base de données relationnelle, qu’est-ce qu’une clé primaire ?',
+    options: [
+      'Un identifiant unique pour chaque enregistrement',
+      'Une colonne contenant des valeurs uniques',
+      'Une colonne de référence entre deux tables',
+      'Une valeur qui peut être mise à jour',
+    ],
+    answer: 'Un identifiant unique pour chaque enregistrement',
+    category_id: '6',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '18',
+    question: 'Quel est l’objectif principal du design pattern "Singleton" ?',
+    options: [
+      'Assurer qu’une classe n’ait qu’une seule instance',
+      'Créer des instances d’une classe à la demande',
+      'Assurer que toutes les instances d’une classe soient identiques',
+      'Optimiser les performances d’un programme',
+    ],
+    answer: 'Assurer qu’une classe n’ait qu’une seule instance',
+    category_id: '4',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '19',
+    question:
+      'Quel est l’outil de compilation le plus populaire pour les projets JavaScript ?',
+    options: ['Webpack', 'Grunt', 'Gulp', 'NPM'],
+    answer: 'Webpack',
+    category_id: '7',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+  {
+    id: '20',
+    question: 'En Python, quel mot-clé est utilisé pour définir une fonction ?',
+    options: ['def', 'function', 'func', 'create'],
+    answer: 'def',
+    category_id: '10',
+    created_at: '2025-03-21T00:00:00.000Z',
+  },
+];

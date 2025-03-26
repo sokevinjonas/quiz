@@ -1,13 +1,52 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border quiz-header">
   <ion-toolbar>
-    <ion-title>quiz</ion-title>
+    <ion-buttons slot="start">
+      <ion-button
+        (click)="gotBackAlert()"
+        size="large"
+        fill="clear"
+        color="light"
+      >
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      @if (questions()) { @let qstn = questions(); @let isMarked = qstn &&
+      qstn[currendIndex()] && qstn[currendIndex()].marked ? true : false;
+
+      <ion-button
+        [color]="isMarked ? 'warning' : 'light' "
+        (click)="markAnswer()"
+      >
+        <ion-icon
+          [name]="isMarked ? 'star': 'star-outline'"
+          slot="icon-only"
+        ></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="setIsReview(true)" color="black">
+        <ion-icon slot="icon-only" name="options-outline"></ion-icon>
+      </ion-button>
+      }
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">quiz</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding-horizontal quiz-content">
+  <ion-item lines="none" class="timer">
+    <div slot="start">
+      <ion-chip color="success">
+        <ion-text>+ {{quizSetting().correcAnswerPoint}} </ion-text>
+      </ion-chip>
+      <ion-chip color="danger">
+        <ion-text>- {{quizSetting().wrongAnswerPoint}} </ion-text>
+      </ion-chip>
+    </div>
+
+    <ion-text slot="end">
+      <ion-chip color="dark">
+        <ion-text> {{ '00:00' }} </ion-text>
+      </ion-chip>
+    </ion-text>
+  </ion-item>
 </ion-content>
