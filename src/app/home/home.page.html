@@ -4,14 +4,17 @@
     <ion-card-subtitle>temps pour le quiz</ion-card-subtitle>
     <ion-card-content>
       <form [formGroup]="form()!">
+        @let erro_message = form()?.get('question_count')!.errors?.['maxLimit'];
         <ion-item lines="none" color="light">
           <ion-input
             type="number"
             placeholder="no. de question"
             formControlName="question_count"
-            errorText="no. de question est requis"
+            [errorText]="erro_message ||'No. de question est requis'"
           >
-            <ion-text slot="end"> sur 100 </ion-text>
+            <ion-text slot="end">
+              sur {{quizSetting().questionLimit}}
+            </ion-text>
           </ion-input>
         </ion-item>
         <ion-item lines="none" color="light" class="ion-margin-top">
@@ -29,8 +32,15 @@
             }
           </ion-select>
         </ion-item>
+        <div
+          *ngIf="form()?.get('category_id')?.invalid && form()?.get('category_id')?.touched"
+        >
+          <ion-text color="danger" class="erroMessage"
+            >* Catégorie est requise</ion-text
+          >
+        </div>
         <ion-item lines="none" color="light" class="ion-margin-top">
-          <ion-label>Duree (minute)</ion-label>
+          <ion-label>Duree (HH:mm)</ion-label>
           <ion-datetime-button
             datetime="datetime"
             slot="end"
@@ -48,8 +58,17 @@
             </ng-template>
           </ion-modal>
         </ion-item>
+        @let duration = form()!.get('duration')!; @if (duration.invalid &&
+        duration.touched) {
 
-        @if (isLoading()) {
+        <div>
+          <ion-text color="danger" class="erroMessage">
+            {{ duration.errors?.['invalidTime'] || 'Duree est requise' }}
+          </ion-text>
+
+          >
+        </div>
+        } @if (isLoading()) {
         <ion-button>
           <ion-spinner name="crescent"></ion-spinner>
         </ion-button>
