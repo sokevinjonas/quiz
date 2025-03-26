@@ -12,7 +12,7 @@ export class QuizService {
   };
   constructor() {}
 
-  fechtQuestions(formValues: {
+  fetchQuestions(formValues: {
     category: string;
     difficulty: string;
     type: string;

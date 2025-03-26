@@ -1,4 +1,18 @@
 <ion-content [fullscreen]="true">
+  <ion-header slot="fixed" class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>Paramètre Quiz</ion-title>
+      <ion-buttons
+        slot="end"
+        [routerLink]="['/settings']"
+        routerLinkActive="router-link-active"
+      >
+        <ion-button color="dark">
+          <ion-icon slot="start" name="cog"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
   <ion-card class="ion-padding">
     <ion-card-title>Allons-y</ion-card-title>
     <ion-card-subtitle>temps pour le quiz</ion-card-subtitle>
@@ -53,7 +67,6 @@
                 presentation="time"
                 hourCycle="h23"
                 [showDefaultButtons]="true"
-                [formatOptions]="{ hour: 'numeric', minute: '2-digit' }"
               ></ion-datetime>
             </ng-template>
           </ion-modal>

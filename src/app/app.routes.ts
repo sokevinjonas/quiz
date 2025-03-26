@@ -15,4 +15,8 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/quiz/quiz.page').then((m) => m.QuizPage),
   },
+  {
+    path: 'settings',
+    loadComponent: () => import('./pages/settings/settings.page').then( m => m.SettingsPage)
+  },
 ];
