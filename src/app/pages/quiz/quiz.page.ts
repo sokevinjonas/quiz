@@ -1,6 +1,7 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { register } from 'swiper/element/bundle';
 import {
   IonContent,
   IonHeader,
@@ -24,6 +25,9 @@ import {
 } from 'ionicons/icons';
 import { QuizService } from 'src/app/services/quiz/quiz.service';
 import { Router } from '@angular/router';
+import { QuizQuestionsComponent } from '../../components/quiz-questions/quiz-questions.component';
+register();
+
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.page.html',
@@ -31,7 +35,6 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [
     IonText,
-    IonLabel,
     IonChip,
     IonItem,
     IonButtons,
@@ -42,6 +45,7 @@ import { Router } from '@angular/router';
     IonToolbar,
     CommonModule,
     FormsModule,
+    QuizQuestionsComponent,
   ],
 })
 export class QuizPage implements OnInit {
